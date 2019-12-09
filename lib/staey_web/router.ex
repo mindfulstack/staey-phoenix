@@ -19,8 +19,11 @@ defmodule StaeyWeb.Router do
     get "/", PageController, :index
   end
 
-  # Other scopes may use custom stacks.
-  # scope "/api", StaeyWeb do
-  #   pipe_through :api
-  # end
+
+  scope "/api", StaeyWeb do
+    pipe_through :api
+
+    get "/users", Api.UserController, :index
+    get "/users/:id", Api.UserController, :show
+  end
 end

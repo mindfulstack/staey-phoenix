@@ -1,4 +1,4 @@
-defmodule StaeyPhoenix.DataCase do
+defmodule Staey.DataCase do
   @moduledoc """
   This module defines the setup for tests requiring
   access to the application's data layer.
@@ -10,7 +10,7 @@ defmodule StaeyPhoenix.DataCase do
   we enable the SQL sandbox, so changes done to the database
   are reverted at the end of every test. If you are using
   PostgreSQL, you can even run database tests asynchronously
-  by setting `use StaeyPhoenixWeb.DataCase, async: true`, although
+  by setting `use StaeyWeb.DataCase, async: true`, although
   this option is not recommendded for other databases.
   """
 
@@ -18,20 +18,20 @@ defmodule StaeyPhoenix.DataCase do
 
   using do
     quote do
-      alias StaeyPhoenix.Repo
+      alias Staey.Repo
 
       import Ecto
       import Ecto.Changeset
       import Ecto.Query
-      import StaeyPhoenix.DataCase
+      import Staey.DataCase
     end
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(StaeyPhoenix.Repo)
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Staey.Repo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(StaeyPhoenix.Repo, {:shared, self()})
+      Ecto.Adapters.SQL.Sandbox.mode(Staey.Repo, {:shared, self()})
     end
 
     :ok

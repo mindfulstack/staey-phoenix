@@ -1,7 +1,7 @@
-defmodule StaeyPhoenixWeb.Endpoint do
-  use Phoenix.Endpoint, otp_app: :staey_phoenix
+defmodule StaeyWeb.Endpoint do
+  use Phoenix.Endpoint, otp_app: :staey
 
-  socket "/socket", StaeyPhoenixWeb.UserSocket,
+  socket "/socket", StaeyWeb.UserSocket,
     websocket: true,
     longpoll: false
 
@@ -11,7 +11,7 @@ defmodule StaeyPhoenixWeb.Endpoint do
   # when deploying your static files in production.
   plug Plug.Static,
     at: "/",
-    from: :staey_phoenix,
+    from: :staey,
     gzip: false,
     only: ~w(css fonts images js favicon.ico robots.txt)
 
@@ -39,8 +39,8 @@ defmodule StaeyPhoenixWeb.Endpoint do
   # Set :encryption_salt if you would also like to encrypt it.
   plug Plug.Session,
     store: :cookie,
-    key: "_staey_phoenix_key",
-    signing_salt: "cLKOB64Q"
+    key: "_staey_key",
+    signing_salt: "XLA15zIb"
 
-  plug StaeyPhoenixWeb.Router
+  plug StaeyWeb.Router
 end

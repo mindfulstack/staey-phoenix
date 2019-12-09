@@ -1,4 +1,4 @@
-defmodule StaeyPhoenixWeb.ConnCase do
+defmodule StaeyWeb.ConnCase do
   @moduledoc """
   This module defines the test case to be used by
   tests that require setting up a connection.
@@ -11,7 +11,7 @@ defmodule StaeyPhoenixWeb.ConnCase do
   we enable the SQL sandbox, so changes done to the database
   are reverted at the end of every test. If you are using
   PostgreSQL, you can even run database tests asynchronously
-  by setting `use StaeyPhoenixWeb.ConnCase, async: true`, although
+  by setting `use StaeyWeb.ConnCase, async: true`, although
   this option is not recommendded for other databases.
   """
 
@@ -21,18 +21,18 @@ defmodule StaeyPhoenixWeb.ConnCase do
     quote do
       # Import conveniences for testing with connections
       use Phoenix.ConnTest
-      alias StaeyPhoenixWeb.Router.Helpers, as: Routes
+      alias StaeyWeb.Router.Helpers, as: Routes
 
       # The default endpoint for testing
-      @endpoint StaeyPhoenixWeb.Endpoint
+      @endpoint StaeyWeb.Endpoint
     end
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(StaeyPhoenix.Repo)
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Staey.Repo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(StaeyPhoenix.Repo, {:shared, self()})
+      Ecto.Adapters.SQL.Sandbox.mode(Staey.Repo, {:shared, self()})
     end
 
     {:ok, conn: Phoenix.ConnTest.build_conn()}

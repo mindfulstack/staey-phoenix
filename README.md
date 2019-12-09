@@ -1,4 +1,4 @@
-# StaeyPhoenix
+# Staey
 
 To start your Phoenix server:
 

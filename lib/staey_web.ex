@@ -1,12 +1,12 @@
-defmodule StaeyPhoenixWeb do
+defmodule StaeyWeb do
   @moduledoc """
   The entrypoint for defining your web interface, such
   as controllers, views, channels and so on.
 
   This can be used in your application as:
 
-      use StaeyPhoenixWeb, :controller
-      use StaeyPhoenixWeb, :view
+      use StaeyWeb, :controller
+      use StaeyWeb, :view
 
   The definitions below will be executed for every view,
   controller, etc, so keep them short and clean, focused
@@ -19,19 +19,19 @@ defmodule StaeyPhoenixWeb do
 
   def controller do
     quote do
-      use Phoenix.Controller, namespace: StaeyPhoenixWeb
+      use Phoenix.Controller, namespace: StaeyWeb
 
       import Plug.Conn
-      import StaeyPhoenixWeb.Gettext
-      alias StaeyPhoenixWeb.Router.Helpers, as: Routes
+      import StaeyWeb.Gettext
+      alias StaeyWeb.Router.Helpers, as: Routes
     end
   end
 
   def view do
     quote do
       use Phoenix.View,
-        root: "lib/staey_phoenix_web/templates",
-        namespace: StaeyPhoenixWeb
+        root: "lib/staey_web/templates",
+        namespace: StaeyWeb
 
       # Import convenience functions from controllers
       import Phoenix.Controller, only: [get_flash: 1, get_flash: 2, view_module: 1]
@@ -39,9 +39,9 @@ defmodule StaeyPhoenixWeb do
       # Use all HTML functionality (forms, tags, etc)
       use Phoenix.HTML
 
-      import StaeyPhoenixWeb.ErrorHelpers
-      import StaeyPhoenixWeb.Gettext
-      alias StaeyPhoenixWeb.Router.Helpers, as: Routes
+      import StaeyWeb.ErrorHelpers
+      import StaeyWeb.Gettext
+      alias StaeyWeb.Router.Helpers, as: Routes
     end
   end
 
@@ -56,7 +56,7 @@ defmodule StaeyPhoenixWeb do
   def channel do
     quote do
       use Phoenix.Channel
-      import StaeyPhoenixWeb.Gettext
+      import StaeyWeb.Gettext
     end
   end
 

@@ -7,15 +7,15 @@
 # General application configuration
 use Mix.Config
 
-config :staey_phoenix,
-  ecto_repos: [StaeyPhoenix.Repo]
+config :staey,
+  ecto_repos: [Staey.Repo]
 
 # Configures the endpoint
-config :staey_phoenix, StaeyPhoenixWeb.Endpoint,
+config :staey, StaeyWeb.Endpoint,
   url: [host: "localhost"],
-  secret_key_base: "pzvwAPFC4Wha7dHHV1m13R7ilKeW2e/JddmrtNo5ZZKH7ESCx0f+3mgVl79wC7u8",
-  render_errors: [view: StaeyPhoenixWeb.ErrorView, accepts: ~w(html json)],
-  pubsub: [name: StaeyPhoenix.PubSub, adapter: Phoenix.PubSub.PG2]
+  secret_key_base: "F20KaPH90QLcbLsxMjcJyQpe8op7K3JD4z1u/nWDHSmbwoYLmDlrhA9BqI4A8AkH",
+  render_errors: [view: StaeyWeb.ErrorView, accepts: ~w(html json)],
+  pubsub: [name: Staey.PubSub, adapter: Phoenix.PubSub.PG2]
 
 # Configures Elixir's Logger
 config :logger, :console,

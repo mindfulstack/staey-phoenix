@@ -1,5 +1,5 @@
-defmodule StaeyPhoenixWeb.Router do
-  use StaeyPhoenixWeb, :router
+defmodule StaeyWeb.Router do
+  use StaeyWeb, :router
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -13,14 +13,14 @@ defmodule StaeyPhoenixWeb.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/", StaeyPhoenixWeb do
+  scope "/", StaeyWeb do
     pipe_through :browser
 
     get "/", PageController, :index
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", StaeyPhoenixWeb do
+  # scope "/api", StaeyWeb do
   #   pipe_through :api
   # end
 end

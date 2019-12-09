@@ -1,4 +1,4 @@
-defmodule StaeyPhoenixWeb.ChannelCase do
+defmodule StaeyWeb.ChannelCase do
   @moduledoc """
   This module defines the test case to be used by
   channel tests.
@@ -21,15 +21,15 @@ defmodule StaeyPhoenixWeb.ChannelCase do
       use Phoenix.ChannelTest
 
       # The default endpoint for testing
-      @endpoint StaeyPhoenixWeb.Endpoint
+      @endpoint StaeyWeb.Endpoint
     end
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(StaeyPhoenix.Repo)
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Staey.Repo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(StaeyPhoenix.Repo, {:shared, self()})
+      Ecto.Adapters.SQL.Sandbox.mode(Staey.Repo, {:shared, self()})
     end
 
     :ok

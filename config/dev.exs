@@ -1,10 +1,10 @@
 use Mix.Config
 
 # Configure your database
-config :staey_phoenix, StaeyPhoenix.Repo,
+config :staey, Staey.Repo,
   username: "postgres",
   password: "postgres",
-  database: "staey_phoenix_dev",
+  database: "staey_dev",
   hostname: "localhost",
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
@@ -15,7 +15,7 @@ config :staey_phoenix, StaeyPhoenix.Repo,
 # The watchers configuration can be used to run external
 # watchers to your application. For example, we use it
 # with webpack to recompile .js and .css sources.
-config :staey_phoenix, StaeyPhoenixWeb.Endpoint,
+config :staey, StaeyWeb.Endpoint,
   http: [port: 4000],
   debug_errors: true,
   code_reloader: true,
@@ -47,13 +47,13 @@ config :staey_phoenix, StaeyPhoenixWeb.Endpoint,
 # different ports.
 
 # Watch static and templates for browser reloading.
-config :staey_phoenix, StaeyPhoenixWeb.Endpoint,
+config :staey, StaeyWeb.Endpoint,
   live_reload: [
     patterns: [
       ~r"priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$",
       ~r"priv/gettext/.*(po)$",
-      ~r"lib/staey_phoenix_web/{live,views}/.*(ex)$",
-      ~r"lib/staey_phoenix_web/templates/.*(eex)$"
+      ~r"lib/staey_web/{live,views}/.*(ex)$",
+      ~r"lib/staey_web/templates/.*(eex)$"
     ]
   ]
 

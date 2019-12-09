@@ -1,5 +1,5 @@
-defmodule StaeyPhoenixWeb.PageControllerTest do
-  use StaeyPhoenixWeb.ConnCase
+defmodule StaeyWeb.PageControllerTest do
+  use StaeyWeb.ConnCase
 
   test "GET /", %{conn: conn} do
     conn = get(conn, "/")

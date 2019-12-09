@@ -1,5 +1,5 @@
-defmodule StaeyPhoenixWeb.ErrorView do
-  use StaeyPhoenixWeb, :view
+defmodule StaeyWeb.ErrorView do
+  use StaeyWeb, :view
 
   # If you want to customize a particular status code
   # for a certain format, you may uncomment below.
